@@ -1,0 +1,17 @@
+{
+    "update": {
+        "version": "1.0.0",
+        "description": "Initial release of the update.",
+        "changes": [
+        {
+            "type": "feature",
+            "description": "Added new calculation features."
+        },
+        {
+            "type": "bugfix",
+            "description": "Attempt to find any bugs whether with tan or log or square root or deg/degree expressions."
+        }
+        ],
+        "date": ""
+    }
+}
