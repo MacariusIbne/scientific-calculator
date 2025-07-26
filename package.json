@@ -2,9 +2,10 @@
   "name": "scientific-calculator",
   "version": "1.0.0",
   "description": "A project that does awesome things",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
+    "build": "webpack --mode production",
     "test": "jest"
   },
   "keywords": [
@@ -16,6 +17,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/MacariusIbne/scientific-calculator"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mathjs": "^10.0.0"
   }
-
 }
