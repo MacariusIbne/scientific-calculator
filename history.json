@@ -1,0 +1,17 @@
+[
+  {
+    "expression": "2+2",
+    "result": 4,
+    "lastEdited": "2025-07-25T12:00:00.000Z"
+  },
+  {
+    "expression": "sqrt(16)",
+    "result": 4,
+    "lastEdited": "2025-07-24T18:30:00.000Z"
+  },
+  {
+    "expression": "log(100)",
+    "result": 2,
+    "lastEdited": "2025-07-23T15:45:00.000Z"
+  }
+]

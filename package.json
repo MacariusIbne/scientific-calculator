@@ -1,0 +1,16 @@
+{
+  "name": "scientific-calculator",
+  "version": "1.0.0",
+  "description": "A project that does awesome things",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "scientific",
+    "calculator"
+  ],
+  "author": "Macarius Ibne Mito <macariusibnemito@gmail.com>",
+  "license": "ISC"
+}
