@@ -12,5 +12,10 @@
     "calculator"
   ],
   "author": "Macarius Ibne Mito <macariusibnemito@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MacariusIbne/scientific-calculator"
+  }
+
 }
