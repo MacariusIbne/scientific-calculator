@@ -26,16 +26,32 @@ function backspace() {
 
 function calculate() {
   let expr = display.value;
-  // Converting calculation string to evaluate enough that evaluation from JS script can properly sustain commands
+
+  // Replace π with Math.PI
   expr = expr.replace(/π/g, 'Math.PI');
-  expr = expr.replace(/sin\(/g, 'Math.sin(');
-  expr = expr.replace(/cos\(/g, 'Math.cos(');
-  expr = expr.replace(/tan\(/g, 'Math.tan(');
+
+  // Convert degrees to radians for sin, cos, and tan
+  expr = expr.replace(/sin\(([^)]+)\)/g, 'Math.sin(($1) * Math.PI / 180)');
+  expr = expr.replace(/cos\(([^)]+)\)/g, 'Math.cos(($1) * Math.PI / 180)');
+  expr = expr.replace(/tan\(([^)]+)\)/g, 'Math.tan(($1) * Math.PI / 180)');
+
+  // Math functions
   expr = expr.replace(/sqrt\(/g, 'Math.sqrt(');
-  expr = expr.replace(/log\(/g, 'Math.log10(');
-  expr = expr.replace(/ln\(/g, 'Math.log(');
+  expr = expr.replace(/log\(/g, 'Math.log10('); // base-10
+  expr = expr.replace(/ln\(/g, 'Math.log(');     // natural log (base e)
+
+  // Power operator
   expr = expr.replace(/\^/g, '**');
 
+  // Evaluate the expression safely
+  try {
+    let result = eval(expr);
+    display.value = result;
+  } catch (error) {
+    display.value = "Error";
+  }
+}
+const isDegreeMode = true; // Default to degree mode
   try {
     const result = eval(expr);
     display.value = (result === Infinity) ? 'Error' : result;
@@ -157,4 +173,4 @@ function clearHistory() {
 document.getElementById('export-button').addEventListener('click', exportHistoryToFile);
 document.getElementById('import-button').addEventListener('change', importHistoryFromFile, false);
   saveToHistory(display.value, result);
-}
+  loadHistory();
